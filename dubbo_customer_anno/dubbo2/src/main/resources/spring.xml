@@ -1,12 +1,29 @@
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
 	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-	   xmlns="http://www.springframework.org/schema/beans"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	   xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+	 http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
 	<!--当前服务的使用方-->
 	<dubbo:application name="customer"/>
 	<!--dubbo服务端端口-->
     <dubbo:registry address="zookeeper://localhost:2181"/>
-	<dubbo:reference id="server" interface="com.gaolei.provider.IServer" />
+
+	<!--dubbo识别注解处理器，不指定包名会在spring bean中找到对应的实例类配置了dubbo注解的-->
+	<dubbo:annotation />
+	<!--开启spring注解扫描-->
+	<context:component-scan base-package="com.gaolei.provider" />
+
 </beans>

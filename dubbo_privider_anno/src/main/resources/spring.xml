@@ -1,8 +1,22 @@
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
 	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-	   xmlns="http://www.springframework.org/schema/beans"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	   xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+	 http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<context:component-scan base-package="com.gaolei.provider" />
 
 	<!-- 提供方应用信息，用于计算依赖关系 (当前应用在注册中心的名字)-->
 	<dubbo:application name="demo-provider"/>
@@ -13,10 +27,13 @@
 	<!-- 用dubbo协议在20880端口暴露服务 -->
 	<dubbo:protocol name="dubbo" port="20880"/>
 
+	<!--dubbo识别注解处理器，不指定包名会在spring bean中找到对应的实例类配置了dubbo注解的-->
+	<dubbo:annotation />
+
 	<!-- 和本地bean一样实现服务 -->
-	<bean id="demoService" class="com.gaolei.provider.impl.ServerImpl"/>
+	<!--<bean id="demoService" class="com.gaolei.provider.impl.ServerImpl"/>-->
 
 	<!-- 声明需要暴露的服务接口 -->
-	<dubbo:service interface="com.gaolei.provider.IServer" ref="demoService"/>
+    <!--	<dubbo:service interface="com.gaolei.provider.IServer" ref="demoService"/>-->
 
 </beans>

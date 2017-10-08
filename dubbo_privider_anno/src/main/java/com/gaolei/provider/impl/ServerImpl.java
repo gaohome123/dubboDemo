@@ -1,7 +1,9 @@
 package com.gaolei.provider.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.gaolei.provider.IServer;
 import com.gaolei.provider.model.User;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +11,8 @@ import java.util.List;
 /**
  * Created by gaolei on 2017/10/7.
  */
+@Component
+@Service    //alibaba 注解声明dubbo服务
 public class ServerImpl implements IServer {
     public String sayHello(String mes) {
         return "HELLO" + mes;
