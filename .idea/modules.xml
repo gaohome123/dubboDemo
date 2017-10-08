@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/dubbo/01-provide.iml" filepath="$PROJECT_DIR$/dubbo/01-provide.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo2/dubbo2/02-customer.iml" filepath="$PROJECT_DIR$/dubbo2/dubbo2/02-customer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo_customer_anno/dubbo2/02-customer (1).iml" filepath="$PROJECT_DIR$/dubbo_customer_anno/dubbo2/02-customer (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/dubboDemo.iml" filepath="$PROJECT_DIR$/.idea/dubboDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo_privider_anno/dubbo_privider_anno.iml" filepath="$PROJECT_DIR$/dubbo_privider_anno/dubbo_privider_anno.iml" />
     </modules>
   </component>
 </project>

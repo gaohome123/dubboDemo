@@ -3,10 +3,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/dubbo/pom.xml" />
-        <option value="$PROJECT_DIR$/dubbo2/dubbo2/pom.xml" />
-        <option value="$PROJECT_DIR$/dubbo_privider_anno/pom.xml" />
-        <option value="$PROJECT_DIR$/dubbo_customer_anno/dubbo2/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo2/pom.xml" />
       </list>
     </option>
   </component>

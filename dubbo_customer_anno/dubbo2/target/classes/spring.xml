@@ -1,0 +1,12 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	   xmlns="http://www.springframework.org/schema/beans"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!--当前服务的使用方-->
+	<dubbo:application name="customer"/>
+	<!--dubbo服务端端口-->
+    <dubbo:registry address="zookeeper://localhost:2181"/>
+	<dubbo:reference id="server" interface="com.gaolei.provider.IServer" />
+</beans>

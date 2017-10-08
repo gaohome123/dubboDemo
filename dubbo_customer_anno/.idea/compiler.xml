@@ -7,16 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="01-provide" />
-        <module name="02-customer" />
-        <module name="02-customer (1)" />
-        <module name="dubbo_privider_anno" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="01-provide" target="1.5" />
-      <module name="02-customer" target="1.5" />
-      <module name="02-customer (1)" target="1.5" />
-      <module name="dubbo_privider_anno" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
