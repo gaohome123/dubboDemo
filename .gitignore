@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+/dubbo_privider_anno/.idea/
+/dubbo_privider_anno/target/
+/dubbo_privider_anno/dubbo_privider_anno.iml
+/dubbo_privider_anno/01-provide.iml
+/dubbo_privider_anno/dubbo.iml
